@@ -22,7 +22,8 @@ export function AppNav() {
     navigate({ to: "/auth", replace: true });
   }
 
-  const avatar = (session?.user.user_metadata?.avatar_url as string | undefined) ?? null;
+  const metadata = session?.user.user_metadata;
+  const avatar = (metadata?.["avatar_url"] as string | undefined) ?? null;
 
   return (
     <>
